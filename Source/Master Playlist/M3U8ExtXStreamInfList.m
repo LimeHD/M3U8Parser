@@ -71,4 +71,23 @@
     return [NSString stringWithFormat:@"%@", self.m3u8InfoList];
 }
 
+- (NSArray *)getListBatwen{
+    [self sortByBandwidthInOrder:NSOrderedDescending];
+    NSMutableArray *arr = [NSMutableArray array];
+    NSInteger index = 0;
+    for (M3U8ExtXStreamInf *info in self.m3u8InfoList) {
+        NSString *name = info.title;
+        if ([name isEqualToString:@""]) {
+            name =  [NSString stringWithFormat:@"%ld", (long)index];
+        }
+        //NSInteger bit = (NSInteger)info.bandwidth;
+        NSDictionary *infoDic = @{@"bandwidth" : [NSString stringWithFormat:@"%ld", (long)info.bandwidth], @"name" : info.title};
+        [arr addObject:infoDic];//[NSString stringWithFormat:@"%ld", (long)info.bandwidth]
+        //[arr addObject:info.bandwidth];
+        index += 1;
+    }
+    return arr;
+    
+}
+
 @end

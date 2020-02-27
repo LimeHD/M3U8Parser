@@ -57,6 +57,8 @@ NSString * NSStringFromMediaResolution(MediaResoulution resolution);
 @property (nonatomic, readonly, copy) NSString *closedCaptions;
 @property (nonatomic, readonly, copy) NSURL   *URI;
 
+@property (nonatomic, readonly, copy) NSString *title;
+
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary;
 
 - (NSURL *)m3u8URL; // the absolute url

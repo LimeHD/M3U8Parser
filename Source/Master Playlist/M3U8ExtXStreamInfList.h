@@ -19,5 +19,6 @@
 - (M3U8ExtXStreamInf *)lastXStreamInf;
 
 - (void)sortByBandwidthInOrder:(NSComparisonResult)order;
+- (NSArray *)getListBatwen;
 
 @end
